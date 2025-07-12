@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Interests({data , setData}) {
+function Interests({data , setData , errors}) {
      const {interests} = data ;
 
      function handleInterests(e)
@@ -32,6 +32,7 @@ function Interests({data , setData}) {
     <input type="checkbox" name ="javascript" checked={interests.includes("javascript")}  onChange={handleInterests}/>
     Javascript
    </label>
+   {errors.interests && <span className='error'>{errors.interests}</span>}
    
    </>
 
