@@ -27,6 +27,23 @@ function App() {
     name: "setting",
     component: Settings
   }]
+
+  function handleNext()
+  {
+    setActiveTab(prev => prev + 1)
+
+  }
+  function handlePrev()
+  {
+    setActiveTab(prev => prev - 1)
+  }
+
+  function handleSubmit()
+  {
+    // setActiveTab()
+    console.log(data)
+
+  }
 let ActiveComponent = tabs[activeTab].component ;
 
 
@@ -43,7 +60,20 @@ let ActiveComponent = tabs[activeTab].component ;
 
       </div>
 
-
+     {activeTab > 0  &&  <div style={{textAlign: "center"}}>
+        <button onClick={handlePrev}>Prev</button>
+      </div>
+      }
+       {activeTab < tabs.length -1  &&  <div style={{textAlign: "center"}}>
+        <button onClick={handleNext}>Next</button>
+      </div>
+      }
+       {activeTab === tabs.length -1  &&  <div style={{textAlign: "center"}}>
+        <button onClick={handleSubmit}>Submit</button>
+      </div>
+      }
+    
+    
 
     </>
   )
