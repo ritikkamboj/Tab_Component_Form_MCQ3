@@ -6,7 +6,15 @@ import { useState } from 'react'
 
 function App() {
 
-  const [activeTab , setActiveTab] = useState(1)
+  const [data , setData] = useState({
+    name : "ritik",
+    age : 26 ,
+    email : "ritik@gmail.com",
+    interests : ['coding', 'music'],
+    settings : "dark"
+  })
+
+  const [activeTab , setActiveTab] = useState(0)
 
   const tabs = [{
     name: "profile",
@@ -27,11 +35,11 @@ let ActiveComponent = tabs[activeTab].component ;
       <h1 className='heading-main'>Tab Form </h1>
       <div className='heading-container'>
 
-        {tabs.map((item) => <div className='heading' key={item.name}> {item.name}</div>)}
+        {tabs.map((item , index) => <div className='heading' onClick={()=> setActiveTab(index)} key={item.name}> {item.name}</div>)}
 
       </div>
-      <div>
-        <ActiveComponent/>
+      <div className='active-tab'>
+        <ActiveComponent data={data} setData={setData}/>
 
       </div>
 
