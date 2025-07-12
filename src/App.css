@@ -1,0 +1,13 @@
+.heading-main {
+  text-align: center;
+}
+.heading-container {
+  display: flex;
+  gap: 10px;
+}
+.heading {
+  padding: 10px;
+  font-size: large;
+  font-weight: bold;
+  border: 1px solid black;
+}
